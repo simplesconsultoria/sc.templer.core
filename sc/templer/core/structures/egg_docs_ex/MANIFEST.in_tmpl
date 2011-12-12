@@ -1,0 +1,3 @@
+recursive-include $namespace_package *
+recursive-include docs *
+global-exclude *pyc

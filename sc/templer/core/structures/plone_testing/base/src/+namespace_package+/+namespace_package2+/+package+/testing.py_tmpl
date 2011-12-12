@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+
+from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import PLONE_FIXTURE
+from plone.app.testing import IntegrationTesting
+from plone.app.testing import FunctionalTesting
+
+
+class Fixture(PloneSandboxLayer):
+
+    defaultBases = (PLONE_FIXTURE,)
+
+    def setUpZope(self, app, configurationContext):
+        # Load ZCML
+        import ${namespace_package}.${namespace_package2}.${package}
+        self.loadZCML(package=${namespace_package}.${namespace_package2}.${package})
+
+    def setUpPloneSite(self, portal):
+    #if str($add_profile) == 'True'
+        # Install into Plone site using portal_setup
+        self.applyProfile(portal, '${namespace_package}.${namespace_package2}.${package}:default')
+    #end if
+    #if not(str($add_profile) == 'True')
+        # Use here to setup your Plone site
+        pass
+    #end if
+
+
+FIXTURE = Fixture()
+INTEGRATION_TESTING = IntegrationTesting(
+    bases=(FIXTURE,),
+    name='${namespace_package}.${namespace_package2}.${package}:Integration',
+    )
+FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(FIXTURE,),
+    name='${namespace_package}.${namespace_package2}.${package}:Functional',
+    )
