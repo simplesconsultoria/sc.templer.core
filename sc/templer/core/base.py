@@ -97,14 +97,16 @@ class PlonePackage(NestedPackage):
         if self.has_structure(structure):
             self.required_structures.append(structure)
 
-    def has_profile(self, responses):
+    def has_profile(self, resp):
         ''' Return true if we have any GS profile '''
-        return (responses.get('add_profile',False) or
-                responses.get('add_profile_uninstall',False) or
-                responses.get('add_profile_init_content',False))
+        return (resp.get('add_profile',False) or
+                resp.get('add_profile_uninstall',False) or
+                resp.get('add_profile_init_content',False))
 
     def check_vars(self, vars, cmd):
-        responses = super(PlonePackage, self).check_vars(vars, cmd)
+        resp = super(PlonePackage, self).check_vars(vars, cmd)
         self.add_plone_testing(responses['plone_version'])
-        responses['has_profile'] = self.has_profile(responses)
-        return responses
+        resp['has_profile'] = self.has_profile(responses)
+        resp['add_profile_init_content'] = resp.get('add_profile_init_content',
+                                                    False)
+        return resp
