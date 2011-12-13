@@ -105,8 +105,8 @@ class PlonePackage(NestedPackage):
 
     def check_vars(self, vars, cmd):
         resp = super(PlonePackage, self).check_vars(vars, cmd)
-        self.add_plone_testing(responses['plone_version'])
-        resp['has_profile'] = self.has_profile(responses)
+        self.add_plone_testing(resp['plone_version'])
+        resp['has_profile'] = self.has_profile(resp)
         resp['add_profile_init_content'] = resp.get('add_profile_init_content',
                                                     False)
         return resp
