@@ -17,3 +17,8 @@ def remove_egg_docs(path):
     FILES = ['CHANGES.txt', 'CONTRIBUTORS.txt', 'README.txt', ]
     for FILE in FILES:
         os.remove(os.path.join(path, FILE))
+
+
+def year():
+    ''' Return the actual year '''
+    return datetime.now().strftime('%Y')
