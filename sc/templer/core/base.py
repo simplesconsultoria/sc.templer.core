@@ -36,7 +36,7 @@ class NestedPackage(BaseTemplate):
     help = """This is a base template for Simples Consultoria's projects that
               use a nested namespace (two dots in the name).
               """
-    category = "Simples Consultoria"
+    category = "Simples Consultoria - Python"
     ndots = 2
     use_cheetah = True
     required_templates = []
@@ -65,6 +65,8 @@ class PlonePackage(NestedPackage):
     help = """This is a base template for Simples Consultoria's Plone projects
               that use a nested namespace (two dots in the name).
               """
+
+    category = "Simples Consultoria - Plone"
 
     required_templates = ['python_package', ]
 
