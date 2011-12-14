@@ -3,9 +3,13 @@ import os
 from datetime import datetime
 
 
-def gen_version():
+def gen_version(show_minor=True):
     ''' Generates a version number based on YYYYMMDD.nn pattern'''
-    return datetime.now().strftime('%Y%m%d.01')
+    version = datetime.now().strftime('%Y%m%d')
+    minor = ''
+    if show_minor:
+        minor = '.01'
+    return '%s%s' % (version, minor)
 
 
 def remove_egg_docs(path):
