@@ -20,5 +20,5 @@ def remove_egg_docs(path):
 
 
 def year():
-    ''' Return the actual year '''
+    ''' Return the current year '''
     return datetime.now().strftime('%Y')
