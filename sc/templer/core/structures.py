@@ -6,6 +6,10 @@ class EggDocsStructure(Structure):
     _structure_dir = 'structures/egg_docs_ex'
 
 
+class PlonePackageStructure(Structure):
+    _structure_dir = 'structures/plone_package'
+
+
 class PloneTestingStructure(Structure):
     _structure_dir = 'structures/plone_testing/base'
 
