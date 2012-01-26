@@ -68,10 +68,13 @@ class PlonePackage(NestedPackage):
 
     category = "Simples Consultoria - Plone"
 
-    required_templates = ['python_package', ]
+    _template_dir = "templates/plone_package"
 
     default_required_structures = ['bootstrap',
-                                   'plone_testing_base']
+                                   'egg_docs_ex',
+                                   'plone_testing_base',
+                                   'plone_package'
+                                   ]
 
     vars = copy.deepcopy(base_vars())
 
