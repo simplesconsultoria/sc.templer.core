@@ -46,11 +46,12 @@ setup(
 
     [templer.templer_structure]
     egg_docs_ex = sc.templer.core.structures:EggDocsStructure
+    plone_package = sc.templer.core.structures:PlonePackageStructure
     plone_testing_base = sc.templer.core.structures:PloneTestingStructure
     plone_testing_40 = sc.templer.core.structures:PloneTesting40Structure
     plone_testing_41 = sc.templer.core.structures:PloneTesting41Structure
     plone_testing_42 = sc.templer.core.structures:PloneTesting42Structure
-    
+
     gs_nested_default = sc.templer.core.structures:GSDefaultProfileStructure
     gs_nested_uninstall = sc.templer.core.structures:GSUninstallProfileStructure
     gs_nested_init_content = sc.templer.core.structures:GSInitContentProfileStructure
