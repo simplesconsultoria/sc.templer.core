@@ -1,15 +1,31 @@
 # -*- coding:utf-8 -*-
+
 import os
 from setuptools import setup, find_packages
 
 version = '$version'
+long_description = open("README.rst").read() + "\n" +
+                   open(os.path.join("docs", "INSTALL.txt")).read() + "\n" +
+                   open(os.path.join("docs", "CREDITS.txt")).read() + "\n" +
+                   open(os.path.join("docs", "HISTORY.txt")).read(),
 
 setup(name='$namespace_package.$namespace_package2.$package',
       version=version,
       description="${description or None}",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=long_description,
       classifiers=[
+        "Development Status :: 3 - Alpha",
+        # XXX: Replace Development Status if needed:
+        # "Development Status :: 4 - Beta",
+        "Framework :: Plone",
+        "Framework :: Plone :: $plone_version",
+        "Framework :: Zope2",
+        "License :: Other/Proprietary License",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.6",
+        "Topic :: Internet :: WWW/HTTP",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords=${repr($keywords) or $empty},
@@ -18,21 +34,18 @@ setup(name='$namespace_package.$namespace_package2.$package',
       url=${repr($url) or $empty},
       license=${repr($license_name) or $empty},
       packages=find_packages('src'),
-      package_dir = {'': 'src'},
-      namespace_packages=['$namespace_package', 
-                         '$namespace_package.$namespace_package2'],
+      package_dir={'': 'src'},
+      namespace_packages=['$namespace_package', '$namespace_package.$namespace_package2'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-      ],
+        'setuptools',
+        # XXX: Add extra requirements here
+        ],
       extras_require={
         'test': ['plone.app.testing'],
         },
       entry_points="""
-      # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,
