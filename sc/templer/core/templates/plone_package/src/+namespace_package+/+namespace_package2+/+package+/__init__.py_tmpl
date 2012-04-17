@@ -1,1 +1,4 @@
-#
+# -*- coding: utf-8 -*-
+from zope.i18nmessageid import MessageFactory as BaseMessageFactory
+
+MessageFactory = BaseMessageFactory('${namespace_package}.${namespace_package2}.${package}')
