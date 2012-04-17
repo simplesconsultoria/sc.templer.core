@@ -5,7 +5,6 @@ from setuptools import setup, find_packages
 
 version = '$version'
 long_description = open("README.rst").read() + "\n" + \
-                   open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
                    open(os.path.join("docs", "HISTORY.txt")).read()
 
@@ -40,7 +39,7 @@ setup(name='$namespace_package.$namespace_package2.$package',
       zip_safe=False,
       install_requires=[
         'setuptools',
-        'five.grok>=1.2',
+        'collective.grok',
         # XXX: Add extra requirements here
         ],
       extras_require={

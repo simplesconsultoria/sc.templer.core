@@ -8,13 +8,7 @@
 
     <includeDependencies package="." />
 
-    <include package="five.grok" />
-
     <grok:grok package="." />
-
-    #if str($has_profile) == 'True'
-    <include file="profiles.zcml"/>
-    #end if
 
 
 </configure>
