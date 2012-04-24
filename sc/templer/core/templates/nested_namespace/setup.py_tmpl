@@ -18,7 +18,8 @@ setup(name='$namespace_package.$namespace_package2.$package',
         # XXX: Replace Development Status if needed:
         # "Development Status :: 4 - Beta",
         "Framework :: Plone",
-        "Framework :: Plone :: $plone_version",
+        # FIXME: https://simplesnet.com.br/suporte/issues/4263
+        "Framework :: Plone :: 4.1",
         "Framework :: Zope2",
         "License :: Other/Proprietary License",
         "License :: OSI Approved :: GNU General Public License (GPL)",
