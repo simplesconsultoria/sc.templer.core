@@ -1,14 +1,18 @@
 # -*- coding:utf-8 -*-
+
 import os
 from setuptools import setup, find_packages
 
 version = '$version'
+long_description = open("README.rst").read() + "\n" + \
+                   open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
+                   open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
+                   open(os.path.join("docs", "HISTORY.txt")).read()
 
 setup(name='$namespace_package.$namespace_package2.$package',
       version=version,
       description="${description or None}",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=long_description,
       classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: $plone_version",
