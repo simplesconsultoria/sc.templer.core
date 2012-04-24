@@ -8,9 +8,9 @@ from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import login
 from plone.app.testing import setRoles
 
-from ${namespace_package}.${namespace_package2}.${package}.testing import INTEGRATION_TESTING
+from ${namespace_package}.${namespace_package2}.${package}.config import PROJECTNAME
 
-PROJECTNAME = '${namespace_package}.${namespace_package2}.${package}'
+from ${namespace_package}.${namespace_package2}.${package}.testing import INTEGRATION_TESTING
 
 
 class BaseTestCase(unittest.TestCase):

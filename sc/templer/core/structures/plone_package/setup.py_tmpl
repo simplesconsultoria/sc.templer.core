@@ -41,7 +41,7 @@ setup(name='$namespace_package.$namespace_package2.$package',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
-          'five.grok',
+          'collective.grok',
       ],
       extras_require={
         'test': ['plone.app.testing'],

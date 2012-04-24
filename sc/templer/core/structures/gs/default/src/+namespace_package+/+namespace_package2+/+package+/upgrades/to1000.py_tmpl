@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 import logging
 
-from zope import component
+from collective.grok import gs
 
-from Products.CMFCore.utils import getToolByName
-from Products.GenericSetup import interfaces as gsinterfaces
-from Products.GenericSetup.upgrade import listUpgradeSteps
-
-PROJECT = '${namespace_package}.${namespace_package2}.${package}'
+from ${namespace_package}.${namespace_package2}.${package}.config import DEPENDENCIES
+from ${namespace_package}.${namespace_package2}.${package}.config import PROJECTNAME
 
 
+@gs.upgradestep(title=u'Initial upgrade steo',
+                description=u'Upgrade step run at install time',
+                source='0.0', destination='1000', sortkey=1,
+                profile='${namespace_package}.${namespace_package2}.${package}:default')
 def fromZero(context):
-    ''' Upgrade from Zero to version 1000
-    '''
-    # Do something here
+    """ Upgrade from Zero to version 1000
+    """
     pass
